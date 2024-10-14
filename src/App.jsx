@@ -1,35 +1,67 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+      {/* Navbar */}
+      <nav className="navbar">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#sports">Sports</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      {/* Landing Page */}
+      <section id="home" className="section">
+        <h1>Welcome to the Sports Website</h1>
+        <p>Scroll down to explore more about the sports world.</p>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="section">
+        <h2>About Us</h2>
         <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+          We are passionate about sports, providing information and updates on the latest in various sporting disciplines.
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      </section>
+
+      {/* Sports Section */}
+      <section id="sports" className="section">
+        <h2>Featured Sports</h2>
+        <div className="sports-cards">
+          <div className="card">
+            <img src="https://via.placeholder.com/150" alt="Sport 1" />
+            <h3>Football</h3>
+            <p>Explore the latest football news, matches, and highlights.</p>
+          </div>
+          <div className="card">
+            <img src="https://via.placeholder.com/150" alt="Sport 2" />
+            <h3>Basketball</h3>
+            <p>Stay updated with basketball scores, players, and teams.</p>
+          </div>
+          <div className="card">
+            <img src="https://via.placeholder.com/150" alt="Sport 3" />
+            <h3>Cricket</h3>
+            <p>Catch up on cricket matches, rankings, and news.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="section">
+        <h2>Contact Us</h2>
+        <p>Get in touch for more sports updates and news.</p>
+        <button onClick={() => setCount(count + 1)}>
+          Count clicks: {count}
+        </button>
+      </section>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
